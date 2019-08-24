@@ -1,3 +1,20 @@
 For Jupyter notebooks, you need to have the file you want to read in the same location as your instance. You can use 
 
-pwd (click shift and enter) to see your current directory. The file needs to be in this same place to read. 
+pwd (click shift and enter) to see your current directory. The file needs to be in this same place to read. If not you need to pass in
+the whole filepath to read it. 
+
+notes: I'm thinking a repository of files can be used so if you have a cron job or something that can write files
+to a repository, then you just need to define the filename and can keep the filepath the same in code. This could help with data pipeline
+issues when troubleshooting as you can look at the repository and see if the file is there. A nicely worded exception error in python
+can show you that the file isn't there and possibly run contingent code if it fails to retry the previous data pipeline workflow to save it.
+This way, even if it fails the first time, it can try again maybe in a new way or route, or even gather more log information about the
+failure so that when you recieve a notification of the failure, you can spend time fixing it and less time troubleshooting it. Each time 
+you find a new way it fails, write that into the exception handling so that it can continue if that same exception or workflow failure 
+happens again. 
+
+pd.read_csv('example')
+
+df = pd.read_csv('example')
+
+excel can't input macros, formulas
+
