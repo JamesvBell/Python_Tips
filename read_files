@@ -1,0 +1,3 @@
+For Jupyter notebooks, you need to have the file you want to read in the same location as your instance. You can use 
+
+pwd (click shift and enter) to see your current directory. The file needs to be in this same place to read. 
